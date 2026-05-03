@@ -1,0 +1,4 @@
+@use 'variables' as *;   // Variables globales
+@use 'mixins' as *;      // Mixins reutilizables
+@use 'reset';            // Reset & base
+@use 'components';       // Bloques BEM

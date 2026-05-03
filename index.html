@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShoeStore - Inicio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Overlay del menú lateral -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <button class="header__menu-btn" id="openMenu" aria-label="Abrir menú">☰</button>
+
+    <div class="header__logos">
+      <img src="img/logo_a.png" class="header__logo" alt="ShoeStore Logo A">
+      <img src="img/logo_b.png" class="header__logo" alt="ShoeStore Logo B">
+    </div>
+
+    <a href="shop.html" class="cart-icon" aria-label="Ver carrito">
+      🛒<span class="cart-icon__count" id="cartCount">0</span>
+    </a>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Menú de navegación">
+    <button class="sidebar__close" id="closeMenu" aria-label="Cerrar menú">✖</button>
+    <nav>
+      <a href="index.html" class="sidebar__link sidebar__link--active">Inicio</a>
+      <a href="form.html"  class="sidebar__link">Cuenta</a>
+      <a href="shop.html"  class="sidebar__link">Carrito</a>
+    </nav>
+  </aside>
+
+  <!-- Catálogo de productos -->
+  <main>
+    <section class="products" aria-label="Catálogo de productos">
+
+      <article class="card">
+        <img src="img/URBANS.png" class="card__image" alt="Urban Sneakers">
+        <h2 class="card__name">Urban Sneakers</h2>
+        <p class="card__price">$1,200</p>
+        <button class="card__btn" data-name="Urban Sneakers" data-price="1200">Agregar</button>
+      </article>
+
+      <article class="card">
+        <img src="img/SPORTS.png" class="card__image" alt="Sport Collection">
+        <h2 class="card__name">Sport Collection</h2>
+        <p class="card__price">$1,400</p>
+        <button class="card__btn" data-name="Sport Collection" data-price="1400">Agregar</button>
+      </article>
+
+      <article class="card">
+        <img src="img/CASUALS.png" class="card__image" alt="Casual Style">
+        <h2 class="card__name">Casual Style</h2>
+        <p class="card__price">$1,100</p>
+        <button class="card__btn" data-name="Casual Style" data-price="1100">Agregar</button>
+      </article>
+
+      <article class="card">
+        <img src="img/PREMIUM.png" class="card__image" alt="Premium Line">
+        <h2 class="card__name">Premium Line</h2>
+        <p class="card__price">$2,000</p>
+        <button class="card__btn" data-name="Premium Line" data-price="2000">Agregar</button>
+      </article>
+
+      <article class="card">
+        <img src="img/EDITIONS.png" class="card__image" alt="Limited Editions">
+        <h2 class="card__name">Limited Editions</h2>
+        <p class="card__price">$2,500</p>
+        <button class="card__btn" data-name="Limited Editions" data-price="2500">Agregar</button>
+      </article>
+
+      <article class="card">
+        <img src="img/RUNNING.png" class="card__image" alt="Running Shoes">
+        <h2 class="card__name">Running Shoes</h2>
+        <p class="card__price">$1,300</p>
+        <button class="card__btn" data-name="Running Shoes" data-price="1300">Agregar</button>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

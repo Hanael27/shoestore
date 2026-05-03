@@ -1,0 +1,379 @@
+// COMPONENTS — BEM
+
+// HEADER
+.header {
+  @include flex-between;
+  background: $color-header;
+  color: $color-white;
+  padding: $spacing-md;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__menu-btn {
+    font-size: $font-size-xl;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: $color-white;
+    line-height: 1;
+    padding: $spacing-xs;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__logos {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+}
+
+// CART ICON
+.cart-icon {
+  position: relative;
+  color: $color-white;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+
+  &__count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: $color-danger;
+    color: $color-white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
+// SIDEBAR
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -$sidebar-width;
+  width: $sidebar-width;
+  height: 100%;
+  background: $color-sidebar;
+  padding: $spacing-md;
+  transition: left $transition-base;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  z-index: 999;
+
+  &--active {
+    left: 0;
+  }
+
+  &__close {
+    cursor: pointer;
+    color: $color-white;
+    font-size: $font-size-lg;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    line-height: 1;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__link {
+    color: $color-text-muted;
+    font-size: $font-size-md;
+    padding: $spacing-xs 0;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--active {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+}
+
+// Overlay behind sidebar
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+
+  &--visible {
+    display: block;
+  }
+}
+
+// PRODUCTS GRID
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// PRODUCT CARD
+.card {
+  @include card;
+  padding: $spacing-md;
+  text-align: center;
+
+  &__image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__price {
+    color: $color-primary;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__btn {
+    @include btn-base;
+    width: 100%;
+    background: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background: $color-primary-dark;
+    }
+
+    &:disabled {
+      background: $color-neutral;
+      cursor: default;
+      transform: none;
+    }
+  }
+}
+
+// FORM
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: $spacing-xl $spacing-md;
+  min-height: calc(100vh - 60px);
+}
+
+.register-form {
+  background: $color-white;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 2px 16px $color-card-shadow;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+    color: $color-text;
+  }
+
+  &__group {
+    margin-bottom: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1.5px solid #ddd;
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    transition: border-color $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+
+  &__btn {
+    @include btn-base;
+    width: 100%;
+    background: $color-primary;
+    color: $color-white;
+    margin-top: $spacing-sm;
+    font-weight: 700;
+
+    &:hover {
+      background: $color-primary-dark;
+    }
+  }
+
+  &__message {
+    margin-top: $spacing-sm;
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+
+    &--success {
+      display: block;
+      background: #e8f5e9;
+      color: $color-success;
+    }
+
+    &--error {
+      display: block;
+      background: #ffebee;
+      color: $color-danger;
+    }
+  }
+}
+
+// CART PAGE
+.cart {
+  padding: $spacing-lg;
+  max-width: 700px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__empty {
+    text-align: center;
+    color: $color-neutral;
+    padding: $spacing-xl 0;
+    font-size: $font-size-md;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__total {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    color: $color-text;
+
+    span {
+      color: $color-primary;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    @include btn-base;
+    color: $color-white;
+
+    &--buy {
+      background: $color-success;
+
+      &:hover {
+        background: darken($color-success, 8%);
+      }
+    }
+
+    &--clear {
+      background: $color-neutral;
+
+      &:hover {
+        background: darken($color-neutral, 10%);
+      }
+    }
+  }
+}
+
+// CART ITEM
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $color-white;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+  box-shadow: 0 1px 6px $color-card-shadow;
+
+  &__info {
+    font-size: $font-size-md;
+    font-weight: 500;
+  }
+
+  &__price {
+    color: $color-primary;
+    font-weight: 600;
+  }
+
+  &__remove {
+    @include btn-base;
+    background: $color-danger;
+    color: $color-white;
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.8rem;
+
+    &:hover {
+      background: darken($color-danger, 8%);
+    }
+  }
+}
