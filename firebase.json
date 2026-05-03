@@ -4,24 +4,7 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "scss/**",
-      "node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "**/*.css",
-        "headers": [{ "key": "Cache-Control", "value": "max-age=86400" }]
-      },
-      {
-        "source": "**/*.js",
-        "headers": [{ "key": "Cache-Control", "value": "max-age=86400" }]
-      }
+      "**/node_modules/**"
     ]
   }
 }
